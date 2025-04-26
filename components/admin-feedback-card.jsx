@@ -73,9 +73,10 @@ export function AdminFeedbackCard({ feedback, onRespond, onGetAISuggestion }) {
         {feedback.imageUrl && (
           <Box mt={2}>
             <img
-              src={feedback.imageUrl || "/placeholder.svg"}
+              src={feedback.imageUrl || "/placeholder.jpg"}
               alt="Feedback attachment"
               style={{ maxHeight: 192, borderRadius: 8, objectFit: "contain" }}
+              onError={(e)=>e.target.src="/placeholder.jpg"}
             />
           </Box>
         )}

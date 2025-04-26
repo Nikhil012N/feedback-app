@@ -1,21 +1,8 @@
 import { NextResponse } from "next/server"
-import jwt from "jsonwebtoken"
 import { generateText } from "ai"
 import { groq } from "@ai-sdk/groq"
+import { verifyToken } from "@/lib/auth-service"
 
-function verifyToken(request) {
-  const authHeader = request.headers.get("authorization")
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return null
-  }
-
-  const token = authHeader.split(" ")[1]
-  try {
-    return jwt.verify(token, process.env.JWT_SECRET)
-  } catch (error) {
-    return null
-  }
-}
 
 export async function POST(request) {
   try {

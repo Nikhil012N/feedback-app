@@ -26,15 +26,10 @@
     "bcryptjs": "latest",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "cmdk": "1.0.4",
     "date-fns": "latest",
-    "embla-carousel-react": "8.5.1",
-    "gcp-metadata": "latest",
-    "input-otp": "1.4.1",
     "jsonwebtoken": "latest",
     "lucide-react": "^0.454.0",
     "mongoose": "^8.14.0",
-    "multer": "^1.4.5-lts.2",
     "next": "15.2.4",
     "next-themes": "latest",
     "react": "^19",
@@ -42,7 +37,6 @@
     "react-dom": "^19",
     "react-hook-form": "latest",
     "react-hot-toast": "latest",
-    "react-resizable-panels": "^2.1.7",
     "tailwind-merge": "^2.5.5",
     "tailwindcss-animate": "^1.0.7",
     "zod": "latest"
@@ -52,7 +46,6 @@
     "@types/react": "^19",
     "@types/react-dom": "^19",
     "postcss": "^8",
-    "tailwindcss": "^3.4.17",
-    "typescript": "5.8.3"
+    "tailwindcss": "^3.4.17"
   }
 }

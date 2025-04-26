@@ -41,7 +41,7 @@ export function FeedbackCard({ feedback }) {
         {feedback.imageUrl && (
           <Box mt={2}>
             <img
-              src={feedback.imageUrl || "/placeholder.svg"}
+              src={feedback.imageUrl || "/placeholder.jpg"}
               alt="Feedback attachment"
               style={{
                 maxHeight: "12rem",
@@ -49,6 +49,7 @@ export function FeedbackCard({ feedback }) {
                 objectFit: "contain",
                 width: "100%",
               }}
+              onError={(e)=>e.target.src="/placeholder.jpg"}
             />
           </Box>
         )}

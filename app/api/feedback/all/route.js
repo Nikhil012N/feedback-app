@@ -1,21 +1,7 @@
+import { verifyToken } from "@/lib/auth-service"
 import connectDB from "@/lib/db"
 import Feedback from "@/models/feedback"
-import jwt from "jsonwebtoken"
 import { NextResponse } from "next/server"
-function verifyToken(request) {
-  const authHeader = request.headers.get("authorization")
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
-    return null
-  }
-
-  const token = authHeader.split(" ")[1]
-  try {
-    return jwt.verify(token, process.env.JWT_SECRET)
-  } catch (error) {
-    return null
-  }
-}
-
 
 
 export async function GET(request) {
@@ -30,7 +16,7 @@ export async function GET(request) {
     }
     await connectDB()
     const feedbacks = await Feedback.find({})
-      .select("title content rating imageUrl response userId userName userEmail createdAt updatedAt") // Fields to select
+      .select("title content rating imageUrl response userId userName userEmail createdAt updatedAt")
       .sort({ createdAt: -1 })
     const formattedFeedback = feedbacks.map((feedback) => ({
       _id: feedback._id.toString(),

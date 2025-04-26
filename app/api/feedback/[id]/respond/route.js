@@ -1,20 +1,9 @@
 import { NextResponse } from "next/server"
-import jwt from "jsonwebtoken"
 import dbConnect from "@/lib/db"
 import Feedback from "@/models/feedback"
+import { verifyToken } from "@/lib/auth-service"
 
-// Helper to verify JWT
-function verifyToken(request) {
-  const authHeader = request.headers.get("authorization")
-  if (!authHeader || !authHeader.startsWith("Bearer ")) return null
 
-  const token = authHeader.split(" ")[1]
-  try {
-    return jwt.verify(token, process.env.JWT_SECRET)
-  } catch {
-    return null
-  }
-}
 
 export async function POST(request, { params }) {
   try {

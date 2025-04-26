@@ -79,33 +79,41 @@ export default function SignupPage() {
 
   return (
     <>
-      <Box
+   <Box
         component="header"
         sx={{
-          py: 3,
+          py: 4,
+          borderBottom: 1,
+          borderColor: "divider",
           backgroundColor: "background.paper",
-          boxShadow: 1,
         }}
       >
         <Container maxWidth="lg">
           <Stack
             direction="row"
+            justifyContent="space-between"
             alignItems="center"
-            spacing={2}
-            onClick={() => router.push("/")}
           >
-            <Feedback color="primary" fontSize="large" />
-            <Typography
-              variant="h5"
-              component="h1"
-              fontWeight={700}
-              color="primary"
+            <Stack
+              direction="row"
+              alignItems="center"
+              spacing={2}
+              onClick={() => router.push("/")}
             >
-              FeedbackPortal
-            </Typography>
+              <Feedback color="primary" fontSize="large" />
+              <Typography
+                variant="h5"
+                component="h1"
+                fontWeight="700"
+                color="primary"
+              >
+                FeedbackPortal
+              </Typography>
+            </Stack>
           </Stack>
         </Container>
       </Box>
+
 
       <Container
         maxWidth="sm"
